@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Output files
+output/*.xlsx
+output/*.json
+output/*.csv
+
+# Sensitive
+*.key
+*.pem
+.env
+credentials.json
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude
+.claude/plans/
+.claude/worktrees/
+
+# Chrome profile (large binary files)
+.tendata-chrome-profile/
+
+# Database files
+data/*.db

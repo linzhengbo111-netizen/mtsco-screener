@@ -1,0 +1,71 @@
+# 七维度打分权重配置
+# 总分 = sum(各维度得分) + 风险扣分, clamped [0, 100]
+
+scoring:
+  source_agreement:         # 源一致性 (0-15)
+    weight: 15
+    all_three_agree: 15
+    two_agree: 10
+    one_only: 5
+    conflict: 0
+
+  product_fit:              # 产品匹配 (0-25)
+    weight: 25
+    google_website_match: 10      # 网站含 pipe/tube/fitting 关键词
+    linkedin_industry_match: 8    # LinkedIn 行业标签匹配
+    tendata_hs_match: 7           # 海关 HS 编码匹配
+    bonus_multi_source: 5         # 两源以上确认产品匹配
+
+  purchase_intent:          # 采购意愿 (0-25)
+    weight: 25
+    shipments_50_plus: 20         # 12个月 ≥50次进口
+    shipments_20_plus: 15         # ≥20次
+    shipments_5_plus: 10          # ≥5次
+    has_china_supplier: 5         # 有中国供应商
+    recent_import_3m: 5           # 最近3个月有进口
+    linkedin_job_signal: 3        # LinkedIn 有采购相关职位
+
+  company_legitimacy:       # 公司可信度 (0-15)
+    weight: 15
+    website_match: 8              # 官网可访问且匹配公司名
+    linkedin_verified: 5          # LinkedIn 公司页有员工
+    multi_source_confirmed: 2     # 多源确认公司存在
+
+  contact_accessibility:    # 联系方式 (0-10)
+    weight: 10
+    email_found: 4
+    phone_found: 3
+    linkedin_contact: 3
+
+  industry_scale:           # 行业规模 (0-5)
+    weight: 5
+    employees_201_1000: 5
+    employees_11_200: 3
+    target_industry: 2
+
+  risk_penalty:             # 风险扣分 (-20 ~ 0)
+    weight: -20
+    website_dead: -5
+    no_linkedin_page: -3
+    tendata_no_result: -5
+    source_name_conflict: -4
+    likely_aggregator: -5
+
+# 分级阈值
+tiers:
+  A:
+    min_score: 75
+    label: "优先跟进"
+    color: "green"
+  B:
+    min_score: 60
+    label: "列入跟进"
+    color: "blue"
+  C:
+    min_score: 40
+    label: "人工复核"
+    color: "orange"
+  D:
+    min_score: 0
+    label: "暂不跟进"
+    color: "red"

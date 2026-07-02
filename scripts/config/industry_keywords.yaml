@@ -1,0 +1,51 @@
+# 行业关键词库
+# 用于从 Google 网站内容和 LinkedIn 行业标签判断公司业务方向
+
+# 目标行业（高价值匹配）
+target_industries:
+  semiconductor:
+    keywords: [semiconductor, wafer, chip, foundry, fab, cleanroom, lithography, etching, deposition]
+    relevance: high
+  metal_manufacturing:
+    keywords: [steel, metal, pipe, tube, fitting, flange, welding, fabrication, machining]
+    relevance: high
+  industrial_equipment:
+    keywords: [industrial equipment, machinery, process equipment, manufacturing equipment, plant equipment]
+    relevance: high
+  oil_gas:
+    keywords: [oil, gas, petroleum, refinery, petrochemical, pipeline, offshore, energy]
+    relevance: high
+  chemical:
+    keywords: [chemical, petrochemical, process, reactor, heat exchanger, pressure vessel]
+    relevance: high
+  construction:
+    keywords: [construction, building, infrastructure, structural, hvac, plumbing, mechanical contractor]
+    relevance: medium
+  clean_energy:
+    keywords: [hydrogen, fuel cell, solar, renewable energy, battery, electrolyzer, carbon capture]
+    relevance: medium
+
+# 非目标行业（降权/跳过）
+non_target_industries:
+  retail_consumer:
+    keywords: [retail, consumer, fashion, food, beverage, furniture, clothing]
+  software_it:
+    keywords: [software, app, digital, saas, consulting, marketing, advertising]
+  healthcare_services:
+    keywords: [hospital, clinic, pharmacy, healthcare service, medical practice]
+  finance:
+    keywords: [banking, insurance, investment, fund, accounting, tax]
+  education:
+    keywords: [school, university, training, education, academic]
+
+# 采购意愿信号词（Google 网站内容检索）
+purchase_signals:
+  procurement_related:
+    keywords: [procurement, purchasing, sourcing, supply chain, vendor, supplier registration, tender, bid, rfq, rfp]
+  import_related:
+    keywords: [import, international trade, overseas supplier, global sourcing]
+
+# 疑似聚合平台/目录站检测
+aggregator_signals:
+  keywords: [b2b platform, trade directory, supplier directory, marketplace, import export data, trade leads, member companies]
+  domains: [alibaba.com, made-in-china.com, globalsources.com, exportersindia.com, tradeindia.com, kompass.com]

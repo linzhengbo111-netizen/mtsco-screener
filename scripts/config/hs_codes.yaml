@@ -1,0 +1,72 @@
+# 迈拓不锈钢管件 — 目标 HS 编码定义
+# 用于匹配海关数据中的产品相关性
+
+hs_codes:
+  # 核心产品：不锈钢管
+  - code: "730640"
+    name: "不锈钢焊缝管"
+    description: "其他不锈钢制圆形截面焊管"
+    priority: high
+    keywords: [stainless steel pipe, welded pipe, stainless steel tube]
+
+  - code: "730641"
+    name: "不锈钢冷拔管"
+    description: "其他不锈钢制圆形截面冷拔或冷轧管"
+    priority: high
+    keywords: [cold drawn pipe, cold rolled tube, stainless steel]
+
+  - code: "730661"
+    name: "不锈钢方矩管"
+    description: "其他不锈钢制方形或矩形截面焊管"
+    priority: medium
+    keywords: [square tube, rectangular pipe, stainless steel]
+
+  # 管件/法兰
+  - code: "730723"
+    name: "不锈钢对焊管件"
+    description: "不锈钢制对焊管件"
+    priority: high
+    keywords: [butt welding fittings, stainless steel fittings, pipe fittings]
+
+  - code: "730729"
+    name: "不锈钢其他管件"
+    description: "其他不锈钢制管件"
+    priority: medium
+    keywords: [stainless steel fittings, tube fittings, pipe connectors]
+
+  - code: "730721"
+    name: "不锈钢法兰"
+    description: "不锈钢制法兰"
+    priority: high
+    keywords: [stainless steel flange, pipe flange]
+
+  # 不锈钢板/卷（原材料，次相关）
+  - code: "721913"
+    name: "不锈钢热轧卷"
+    description: "热轧不锈钢卷材"
+    priority: low
+    keywords: [hot rolled stainless steel coil]
+
+  - code: "721932"
+    name: "不锈钢冷轧板"
+    description: "冷轧不锈钢板材"
+    priority: low
+    keywords: [cold rolled stainless steel sheet]
+
+  # 目标行业相关 HS（半导体/洁净室设备）
+  - code: "848620"
+    name: "半导体制造设备"
+    description: "半导体器件或集成电路制造用机器及装置"
+    priority: industry
+    keywords: [semiconductor equipment, wafer fabrication]
+
+  - code: "841989"
+    name: "工业用洁净设备"
+    description: "工业用加热、冷却、消毒等设备"
+    priority: industry
+    keywords: [cleanroom equipment, industrial processing]
+
+# 中国供应商信号（部分中国出口 HS 编码子目）
+china_supplier_hints:
+  - "73064090"  # 中国出口不锈钢焊缝管常用子目
+  - "73072300"  # 中国出口不锈钢对焊管件
